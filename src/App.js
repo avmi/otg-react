@@ -1,34 +1,50 @@
 import React from 'react';
 import './App.css';
+import {Canvas} from "./components/canvas/canvas";
 
 class App extends React.Component {
+  widgets = [
+    {
+      id: '1',
+      type: 'text',
+      properties: {
+        value: 'Hello from Widget 1',
+      },
+      x: 10,
+      y: 30,
+      width: 100,
+      height: 50,
+    },
+
+    {
+      id: '2',
+      type: 'text',
+      properties: {
+        value: 'The London is the capital of Great Britain',
+      },
+      x: 350,
+      y: 200,
+      width: 200,
+      height: 350,
+    },
+
+    {
+      id: '3',
+      type: 'progress',
+      properties: {
+        progress: 50,
+      },
+      x: 250,
+      y: 100,
+      width: 200,
+      height: 50,
+    },
+  ];
+
   render() {
     return (
       <div className="app">
-        <div className="preview-box">
-          <h1>Preview text</h1>
-        </div>
-
-        <div className="form">
-          <div className="input-box">
-            <input type="text" value="Preview text" />
-          </div>
-
-          <div className="toolbar">
-            <button>-</button>
-
-            <select>
-              <option>h1</option>
-              <option>h2</option>
-              <option>h3</option>
-              <option>h4</option>
-              <option>h5</option>
-              <option>h6</option>
-            </select>
-
-            <button>+</button>
-          </div>
-        </div>
+        <Canvas widgets={this.widgets} />
       </div>
     );
   }
