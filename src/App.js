@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Canvas} from "./components/canvas/canvas";
+import {Canvas} from "./components/Canvas/canvas";
 
 class App extends React.Component {
   widgets = [

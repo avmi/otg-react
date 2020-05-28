@@ -1,5 +1,5 @@
 import React from 'react';
-import {Widget} from "../widget/widget";
+import {Widget} from "../Widget/widget";
 
 export function Canvas(props) {
   return (

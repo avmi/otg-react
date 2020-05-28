@@ -1,7 +1,7 @@
 import React from 'react';
 import './widget.css';
-import {TextWidget} from "../texWidget/textWidget";
-import {ProgressWidget} from "../progressWidget/progressWidget";
+import {TextWidget} from "../TextWidget/textWidget";
+import {ProgressWidget} from "../ProgressWidget/progressWidget";
 
 export function Widget(props) {
   return (
