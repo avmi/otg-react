@@ -1,19 +1,26 @@
 import React from 'react';
-import {Widget} from "../Widget/widget";
+import Widget from "../Widget/widget";
+import {connect} from 'react-redux';
 
-export function Canvas(props) {
+const Canvas = (props) => {
   return (
     <>
       {Object.keys(props.widgets).map((widgetKey) => {
-        const widgetData = props.widgets[widgetKey]
         return (
           <Widget
             key={widgetKey}
-            {...widgetData}
-            dispatch={props.dispatch}
+            widgetId={widgetKey}
           />
         )
       })}
     </>
   )
 }
+
+function mapStateToProps(state) {
+  return {
+    widgets: state.widgets,
+  }
+}
+
+export default connect(mapStateToProps)(Canvas)
