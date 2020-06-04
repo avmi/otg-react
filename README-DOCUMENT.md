@@ -17,9 +17,10 @@ Toolbar which naturally depend on selection should be disabled if no widget sele
 until user clicks on some of visible widgets). 
 
 Allow adding new widgets to canvas. Default text can be hard-coded for text widgets, for progress widget default 
-value can be set to any random value within 0..100 range.
+value can be set to any random value within 0..100 range. Default position and sized can be made as random values 
+(similar to Random Size/Random Position buttons).
 
-Allow deleting of selected widget.
+Allow deleting of selected widget using toolbar button.
 
 Implement ALL actions via Redux actions, adjust reducers and state accordingly. Components should yield these actions via normal Redux flow.
 
