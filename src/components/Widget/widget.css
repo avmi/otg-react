@@ -1,5 +1,11 @@
 .widget {
   position: absolute;
   overflow: hidden;
-  border: 2px solid blue;
+  background: #fff;
+  border: 2px solid #f3f3f3;
+}
+
+.widget.selected {
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }

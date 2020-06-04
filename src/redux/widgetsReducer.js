@@ -6,11 +6,15 @@ const initialState = {
     type: 'text',
     properties: {
       value: 'Hello from Widget 1',
+      bold: true,
+      italic: false,
+      fontSize: 24,
+      alignment: 'center',
     },
     x: 10,
     y: 30,
-    width: 100,
-    height: 50,
+    width: 200,
+    height: 100,
   },
 
   2: {
@@ -18,6 +22,10 @@ const initialState = {
     type: 'text',
     properties: {
       value: 'The London is the capital of Great Britain',
+      bold: false,
+      italic: true,
+      fontSize: 12,
+      alignment: 'left',
     },
     x: 350,
     y: 200,
@@ -29,7 +37,7 @@ const initialState = {
     id: 3,
     type: 'progress',
     properties: {
-      progress: 50,
+      progress: 30,
     },
     x: 250,
     y: 100,
@@ -40,6 +48,36 @@ const initialState = {
 
 export function widgetsReducer(state = initialState, action) {
   switch (action.type) {
+    case EventTypes.WIDGET_ADD:
+      // TODO: Implement logic for adding widgets
+      return {
+        ...state,
+      }
+
+    case EventTypes.WIDGET_REMOVE:
+      // TODO: Implement logic for removing widgets
+      return {
+        ...state,
+      }
+
+    case EventTypes.WIDGET_MOVE_UP:
+      // TODO: Implement logic for move widget z-index up
+      return {
+        ...state,
+      }
+
+    case EventTypes.WIDGET_MOVE_DOWN:
+      // TODO: Implement logic for move widget z-index down
+      return {
+        ...state,
+      }
+
+    case EventTypes.WIDGET_SET_PROPERTIES:
+      // TODO: Implement logic for setting widget properties
+      return {
+        ...state,
+      }
+
     case EventTypes.WIDGET_POSITION_CHANGE:
       return {
         ...state,

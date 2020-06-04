@@ -1,11 +1,16 @@
 import React from 'react';
-import './widget.css';
-import {TextWidget} from "../TextWidget/textWidget";
-import {ProgressWidget} from "../ProgressWidget/progressWidget";
-import * as EventTypes from '../../redux/eventTypes';
 import {connect} from 'react-redux';
 
+import * as EventTypes from '../../redux/eventTypes';
+
+import TextWidget from "../TextWidget/textWidget";
+import ProgressWidget from "../ProgressWidget/progressWidget";
+
+import './widget.css';
+
 const Widget = (props) => {
+  // TODO: Properly display "selected" state of widget
+  // TODO: Add ability to "select" widget by clicking on it, while bypassing some event allowing them to be handled by inner components (like progress slider or whatever)
   return (
     <div className="widget" style={{
       left: props.x,
@@ -19,9 +24,6 @@ const Widget = (props) => {
       {props.type === 'progress' && (
         <ProgressWidget {...props.properties}/>
       )}
-
-      <button onClick={() => props.processPositionChange(props.id)}>POS</button>
-      <button onClick={() => props.processSizeChange(props.id)}>SIZE</button>
     </div>
   )
 }
@@ -33,6 +35,8 @@ function mapStateToProps(state, ownProps) {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  // TODO: Map actual methods which might be appropriate for widget manipulations (like selection)
+  // TODO: Methods below are left just for copy-paste convenience to other appropiate place
   return {
     processPositionChange: (id) => {
       dispatch({

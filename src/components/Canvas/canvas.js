@@ -1,10 +1,11 @@
 import React from 'react';
 import Widget from "../Widget/widget";
 import {connect} from 'react-redux';
+import './canvas.css';
 
 const Canvas = (props) => {
   return (
-    <>
+    <div className="canvas">
       {Object.keys(props.widgets).map((widgetKey) => {
         return (
           <Widget
@@ -13,7 +14,7 @@ const Canvas = (props) => {
           />
         )
       })}
-    </>
+    </div>
   )
 }
 

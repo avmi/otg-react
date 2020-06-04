@@ -1,8 +1,9 @@
 import React from 'react';
+import './textWidget.css';
 
-export function TextWidget(props) {
+export default function TextWidget(props) {
   return (
-    <div>
+    <div className="text-widget">
       {props.value}
     </div>
   )

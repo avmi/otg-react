@@ -1,0 +1,57 @@
+.command-toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  height: 20px;
+  z-index: 100;
+  font-size: 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+
+.command-toolbar button {
+  font-size: 12px;
+  height: 100%;
+  min-width: 20px;
+  text-align: center;
+  padding: 0 5px;
+  margin: 0 5px;
+  white-space: nowrap;
+  background: #f3f3f3;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.command-toolbar button.active {
+  background: #d8d8d8;
+}
+
+.command-toolbar button:hover {
+  background: #e8e8e8;
+}
+
+.command-toolbar select {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  border-radius: 0;
+}
+
+.command-toolbar label {
+  font-size: 12px;
+  margin-right: 5px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.command-toolbar .separator {
+  border-left: 1px solid #e3e3e3;
+  height: 30px;
+  font-size: 0;
+  margin: -5px 5px;
+}
