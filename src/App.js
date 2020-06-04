@@ -1,9 +1,12 @@
 import React from 'react';
-import './App.css';
+import { Provider } from 'react-redux'
 import Canvas from "./components/Canvas/canvas";
 import CommandToolbar from './components/CommandToolbar/commandToolbar';
-import { Provider } from 'react-redux'
+import Popup from "./components/Popup/popup";
+
 import {store} from './redux/store';
+
+import './App.css';
 
 class App extends React.Component {
   render() {
@@ -12,6 +15,12 @@ class App extends React.Component {
         <div className="app">
           <CommandToolbar/>
           <Canvas/>
+
+          {true && (
+            <Popup title="Dialog Title">
+              Some dialog content
+            </Popup>
+          )}
         </div>
       </Provider>
     );
