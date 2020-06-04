@@ -1,17 +1,13 @@
 import React from 'react';
 
-class IncreaseButton extends React.Component {
-  handleClick = () => {
-    if (this.props.value < this.props.max) {
-      this.props.onClick(this.props.value + 1);
+export function IncreaseButton(props) {
+  const handleClick = () => {
+    if (props.value < props.max) {
+      props.onClick(props.value + 1);
     }
   }
 
-  render() {
-    return (
-      <button disabled={this.props.value === this.props.max} onClick={this.handleClick}>+</button>
-    );
-  }
+  return (
+    <button disabled={props.value === props.max} onClick={handleClick}>+</button>
+  );
 }
-
-export default IncreaseButton;

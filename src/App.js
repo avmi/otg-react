@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import InputForm from "./InputForm";
-import Preview from "./Preview";
+import {InputForm} from "./InputForm";
+import {Preview} from "./Preview";
 
 class App extends React.Component {
 

@@ -1,28 +1,24 @@
 import React from 'react';
-import Toolbar from "./Toolbar";
+import {Toolbar} from "./Toolbar";
 import './InputForm.css';
 
-class InputForm extends React.Component {
+export function InputForm(props) {
 
-  handleLevelChanged = (value) => {
-    this.props.onLevelChanged(value);
+  const handleLevelChanged = (value) => {
+    props.onLevelChanged(value);
   }
 
-  handleInputChanged = (evt) => {
-    this.props.onInputChanged(evt.target.value);
+  const handleInputChanged = (evt) => {
+    props.onInputChanged(evt.target.value);
   }
 
-  render() {
-    return (
-      <div className="form">
-        <div className="input-box">
-          <input type="text" value={this.props.input} onChange={this.handleInputChanged} />
-        </div>
-
-        <Toolbar level={this.props.level} onLevelChanged={this.handleLevelChanged} />
+  return (
+    <div className="form">
+      <div className="input-box">
+        <input type="text" value={props.input} onChange={handleInputChanged}/>
       </div>
-    );
-  }
-}
 
-export default InputForm;
+      <Toolbar level={props.level} onLevelChanged={handleLevelChanged}/>
+    </div>
+  );
+}

@@ -1,17 +1,13 @@
 import React from 'react';
 
-class DecreaseButton extends React.Component {
-  handleClick = () => {
-    if (this.props.value > this.props.min) {
-      this.props.onClick(this.props.value - 1);
+export function DecreaseButton(props) {
+  const handleClick = () => {
+    if (props.value > props.min) {
+      props.onClick(props.value - 1);
     }
   }
 
-  render() {
-    return (
-      <button disabled={this.props.value === this.props.min} onClick={this.handleClick}>-</button>
-    );
-  }
+  return (
+    <button disabled={props.value === props.min} onClick={handleClick}>-</button>
+  );
 }
-
-export default DecreaseButton;
