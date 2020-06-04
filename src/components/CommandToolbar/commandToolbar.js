@@ -17,6 +17,10 @@ const CommandToolbar = (props) => {
 
       <div className="separator"/>
 
+      <button>Delete</button>
+
+      <div className="separator"/>
+
       <button>Move Up</button>
       <button>Move Down</button>
 
