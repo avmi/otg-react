@@ -1,34 +1,34 @@
 import React from 'react';
 import './App.css';
+import {InputForm} from "./InputForm";
+import {Preview} from "./Preview";
 
 class App extends React.Component {
+
+  state = {
+    input: "Preview Text",
+    level: 3
+  }
+
+  handleLevelChanged = (value) => {
+    this.setState({
+      level: value
+    });
+  }
+
+  handleInputChanged = (value) => {
+    this.setState({
+      input: value
+    });
+  }
+
   render() {
     return (
       <div className="app">
-        <div className="preview-box">
-          <h1>Preview text</h1>
-        </div>
+        <Preview level={this.state.level}>{this.state.input}</Preview>
 
-        <div className="form">
-          <div className="input-box">
-            <input type="text" value="Preview text" />
-          </div>
-
-          <div className="toolbar">
-            <button>-</button>
-
-            <select>
-              <option>h1</option>
-              <option>h2</option>
-              <option>h3</option>
-              <option>h4</option>
-              <option>h5</option>
-              <option>h6</option>
-            </select>
-
-            <button>+</button>
-          </div>
-        </div>
+        <InputForm onInputChanged={this.handleInputChanged} onLevelChanged={this.handleLevelChanged}
+                   input={this.state.input} level={this.state.level}/>
       </div>
     );
   }
