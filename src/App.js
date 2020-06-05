@@ -7,6 +7,7 @@ import Popup from "./components/Popup/popup";
 import {store} from './redux/store';
 
 import './App.css';
+import OpenPopup from "./components/OpenPopup/openPopup";
 
 class App extends React.Component {
   render() {
@@ -16,11 +17,7 @@ class App extends React.Component {
           <CommandToolbar/>
           <Canvas/>
 
-          {true && (
-            <Popup title="Dialog Title">
-              Some dialog content
-            </Popup>
-          )}
+          <OpenPopup/>
         </div>
       </Provider>
     );

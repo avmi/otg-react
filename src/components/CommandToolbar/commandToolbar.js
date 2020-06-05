@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import * as EventTypes from '../../redux/eventTypes';
 
 import Toolbar from '../Toolbar/toolbar';
 
@@ -56,7 +57,7 @@ const CommandToolbar = (props) => {
 
       <div className="separator"/>
 
-      <button>Open Document</button>
+      <button onClick={props.openDocumentPopup}>Open Document</button>
       <button>Save Document</button>
     </Toolbar>
   )
@@ -75,6 +76,30 @@ function mapStateToProps() {
 const mapDispatchToProps = (dispatch) => {
   // TODO: Implement logic for all key operations with toolbar buttons
   return {
+    openDocumentPopup: () => {
+      dispatch({
+        type: EventTypes.CANVAS_OPEN_DOCUMENT,
+      });
+
+      dispatch({
+        type: EventTypes.CANVAS_OPEN_DOCUMENT_INIT,
+      });
+
+      fetch('https://rl38uazl52.execute-api.eu-central-1.amazonaws.com/dev/documents')
+        .then(response => response.json())
+        .then(data => {
+          dispatch({
+            type: EventTypes.CANVAS_OPEN_DOCUMENT_SUCCESS,
+            data: data,
+          });
+        })
+        .catch((err) => {
+          dispatch({
+            type: EventTypes.CANVAS_OPEN_DOCUMENT_FAIL,
+            error: err,
+          });
+        });
+    }
   }
 }
 
